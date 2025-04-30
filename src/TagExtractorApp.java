@@ -1,5 +1,7 @@
-public class Main {
+public class TagExtractorApp {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            new TagExtractorFrame();
+        });
     }
 }
