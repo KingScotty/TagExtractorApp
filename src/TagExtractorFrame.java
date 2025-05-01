@@ -31,7 +31,7 @@ public class TagExtractorFrame extends JFrame {
         selectTextFileButton.addActionListener(e -> chooseTextFile());
 
         selectStopWordFileButton = new JButton("Select Stop Word File");
-        selectStopWordFileButton.addActionListener(e -> chooseStopWordFile());
+        selectStopWordFileButton.addActionListener(e -> chooseStopWordsFile());
 
         topPanel.add(selectTextFileButton);
         topPanel.add(selectStopWordFileButton);
@@ -48,6 +48,11 @@ public class TagExtractorFrame extends JFrame {
         bottomPanel.add(extractTagsButton);
         bottomPanel.add(saveTagsButton);
         add(bottomPanel, BorderLayout.SOUTH);
+
+        outputArea = new JTextArea(20, 50);
+        outputArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(outputArea);
+        add(scrollPane, BorderLayout.CENTER);
 
         setVisible(true);
 
